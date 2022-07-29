@@ -22,6 +22,15 @@ public class PhoneCallReceiver extends BroadcastReceiver {
             Log.i("RECEIVER", phoneState);
             Toast.makeText(context, phoneState, Toast.LENGTH_SHORT).show();
 
+            if (phoneState.equals(TelephonyManager.EXTRA_STATE_RINGING)) {
+
+                String phoneNumber = bundle.getString(TelephonyManager.EXTRA_INCOMING_NUMBER);
+
+                Log.i("RECEIVER", phoneNumber + "");
+                Toast.makeText(context, phoneNumber + "", Toast.LENGTH_SHORT).show();
+
+            }
+
         }
 
     }
